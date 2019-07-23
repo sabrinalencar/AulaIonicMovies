@@ -9,5 +9,60 @@
 </ion-header>
 
 <ion-content>
+  <ion-list>
+   <ion-item *ngFor="let entry of formulario">
+     <ion-label>{{entry.artista}}</ion-label>
+     <ion-checkbox slot="start" [(ngModel)]="entry.isChecked"></ion-checkbox>
+   </ion-item>
+ </ion-list>
+ <form [formGroup]="cadastro">
+  <ion-item>
+    <ion-label position="stacked">Nome do filme<ion-text color="danger">*</ion-text></ion-label>
+    <ion-input required type="text" formControlName="nome"></ion-input>
+    </ion-item>
+   <ion-item>
+     <ion-label position="stacked">Nome do diretor<ion-text color="danger">*</ion-text></ion-label>
+     <ion-input required type="text" formControlName="diretor"></ion-input>
+   </ion-item>
+   <ion-item>
+     <ion-label position="stacked">Senha<ion-text color="danger">*</ion-text></ion-label>
+     <ion-input type="password" formControlName="senha"></ion-input>
+   </ion-item>
+   <ion-item>
+    <ion-label position="floating">Gênero</ion-label>
+      <ion-select formControlName="genero">
+            <ion-select-option value="Romance">Romance</ion-select-option>
+            <ion-select-option value="Animação">Animação</ion-select-option>
+            <ion-select-option value="Ação">Ação</ion-select-option>
+            <ion-select-option value="Drama">Drama</ion-select-option>
+            <ion-select-option value="Clássico">Clássico</ion-select-option>
+            <ion-select-option value="Comédia">Comédia</ion-select-option>
+            <ion-select-option value="Terror">Terror</ion-select-option>
+            <ion-select-option value="Suspense">Suspense</ion-select-option>
+
+    </ion-select>
+  </ion-item>
+  <ion-item>
+         <ion-label>Data Lançamento</ion-label>
+         <ion-datetime value="2019-07-23" placeholder="Select Date"></ion-datetime>
+  </ion-item>
+  <ion-item>
+   <ion-label position="floating">Classificação</ion-label>
+     <ion-select formControlName="classificação">
+        <ion-select-option value="Livre">Livre</ion-select-option>
+        <ion-select-option value="16">16 anos</ion-select-option>
+        <ion-select-option value="18">18 anos</ion-select-option>
+     </ion-select>
+  </ion-item>
+
+  <div class="ion-padding">
+    <ion-button [disabled]="!cadastro.valid" expand="block" type="submit" class="ion-no-margin" (click)="enviarCadastro()">Cadastrar filme</ion-button>
+  </div>
+
+
+
+
+ </form>
+
 
 </ion-content>

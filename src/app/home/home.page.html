@@ -10,14 +10,57 @@
 </ion-header>
 
 <ion-content>
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button href="/favorites">
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
     <ion-card class="welcome-card">
-      <img src="/assets/shapes.svg" alt="" />
+      <img src="/assets/toy_story.jpg" alt="" />
       <ion-card-header>
-        <ion-card-subtitle>Get Started</ion-card-subtitle>
-        <ion-card-title>Welcome to {{ title }}</ion-card-title>
+        <ion-card-subtitle>Animação, Comédia</ion-card-subtitle>
+        <div class="meio">
+        <ion-card-title>Toy Story 4</ion-card-title>
+        <ion-chip>
+          <ion-label> 4.5 </ion-label>
+        </ion-chip>
+        </div>
       </ion-card-header>
       <ion-card-content>
-        <p>Now that your app has been created, you'll want to start building out features and components. Check out some of the resources below for next steps.</p>
+        <ion-button (click)="Toast()" fill="outline">Quero ver</ion-button>
+        <ion-button (click)="alerta()" fill="outline">Já vi</ion-button>
+      </ion-card-content>
+    </ion-card>
+    <ion-card class="welcome-card">
+      <img src="/assets/monstros.jpg" alt="" />
+      <ion-card-header>
+        <ion-card-subtitle>Animação, Comédia</ion-card-subtitle>
+        <div class="meio">
+        <ion-card-title>Monstros S/A</ion-card-title>
+        <ion-chip>
+          <ion-label> 4.7 </ion-label>
+        </ion-chip>
+        </div>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-button (click)="Toast()" fill="outline">Quero ver</ion-button>
+        <ion-button (click)="alerta()" fill="outline">Já vi</ion-button>
+      </ion-card-content>
+    </ion-card>
+    <ion-card class="welcome-card">
+      <img src="/assets/frozen.jpg" alt="" />
+      <ion-card-header>
+        <ion-card-subtitle>Animação, Comédia</ion-card-subtitle>
+        <div class="meio">
+        <ion-card-title>Frozen</ion-card-title>
+        <ion-chip>
+          <ion-label> 4.0 </ion-label>
+        </ion-chip>
+        </div>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-button (click)="Toast()" fill="outline">Quero ver</ion-button>
+        <ion-button (click)="alerta()" fill="outline">Já vi</ion-button>
       </ion-card-content>
     </ion-card>
     <ion-list lines="none">
